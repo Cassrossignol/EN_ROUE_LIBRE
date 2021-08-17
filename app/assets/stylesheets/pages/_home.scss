@@ -1,7 +1,8 @@
 // Specific CSS for your home-page
 .banner-home{
   background-image: url("skatecity.jpg");
-  height: 700px;
+  height: 660px;
+  position: center;
   background-size: cover;
 }
 
@@ -9,27 +10,34 @@ body {
   background-color: #B8CCD5;
 }
 
-h1 {
+h2 {
+  color: #446C78;
+  text-align: center;
+  font-size: 30px;
+}
+
+.h1 {
+  padding-top: 60px;
   color: #446C78;
   text-align: center;
   font-size: 40px;
 }
 
 .btn-join {
-  margin: 500px 700px;
-  width: 200px;
-  font-size: 20px;
+  margin: 90px 665px;
+  width: 250px;
+  height: 50px;
+  font-size: 25px;
   padding: 10px;
-  background-color: beige;
+  background-color: #c9d7db;
   border-radius: 4%;
   text-align: center;
   text-decoration: none;
+  border-color: #538594;
 }
 
 .btn-join:hover {
-  background-color: #B8CCD5;
-}
-
-.container {
-  margin: center;
+  background-color: #E1E5E8;
+  border-color: #538594;
+  text-decoration: none;
 }
