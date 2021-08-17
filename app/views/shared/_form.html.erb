@@ -1,0 +1,13 @@
+<%= simple_form_for [:owner, @transport] do |f| %>
+  <%= f.label :titre %>
+  <%= f.text_field :transport_type %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :url_photo %>
+  <%= f.text_field :picture %>
+  <%= f.label :dispo_où %>
+  <%= f.text_field :localization %>
+  <%= f.label :dispo_quand %>
+  <%= f.text_field :availability %>
+  <%= f.submit %>
+<% end %>
