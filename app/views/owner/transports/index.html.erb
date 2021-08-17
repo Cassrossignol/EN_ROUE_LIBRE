@@ -2,3 +2,5 @@
 <% @owner_transports.each do |owner_transport| %>
   <%= owner_transport.transport_type %>
 <% end %>
+
+<%= render "/shared/form", transport: @transport %>
