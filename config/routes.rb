@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   end
   resources :reservations, only: [:index, :show]
   namespace :owner do
-    resources :transports, only: [:index, :show, :create, :update, :destroy]
+    resources :transports, only: [:index, :create, :edit, :update, :destroy]
   end
 end
