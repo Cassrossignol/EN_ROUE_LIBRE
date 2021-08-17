@@ -1,2 +1,4 @@
 <h1>Voici la liste de vos transports !</h1>
-<p><%= @transports %></p>
+<p><%= @transports.each do |transport| %></p>
+<%= transport.transport_type %>
+<%end %>
