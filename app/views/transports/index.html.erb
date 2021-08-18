@@ -2,4 +2,5 @@
 <h1>Voici la liste de vos transports !</h1>
 <p><%= @transports.each do |transport| %></p>
 <%= transport.transport_type %>
+<%= link_to "voir plus", transport_path(transport) %>
 <%end %>
