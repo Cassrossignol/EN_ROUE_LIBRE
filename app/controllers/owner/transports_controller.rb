@@ -1,4 +1,5 @@
 class Owner::TransportsController < ApplicationController
+  before_action :set_transport
 
   def index
     @owner_transports = Transport.where(user: current_user)
@@ -23,11 +24,19 @@ class Owner::TransportsController < ApplicationController
   end
 
   def destroy
+    @owner_transport = Transport.find(params[:id])
+    @owner_transport.destroy
+    redirect_to owner_transport_path(@owner_transport)
   end
 
   private
 
   def owner_transport_params
-    params.require(:owner_transport).permit(:transport_type, :description, :picture, :localization, :availability)
+    params.require(:transport).permit(:transport_type, :description, :picture, :localization,
+                                            :availability)
+  end
+
+  def set_transport
+    @transport = Transport.new
   end
 end
