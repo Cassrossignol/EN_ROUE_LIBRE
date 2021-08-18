@@ -2,7 +2,7 @@
 <html>
 
   <head>
-    <title>ENRoueLibre</title>
+    <title>EnRoueLibre</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -20,6 +20,8 @@
       <p class="alert"><%= alert %></p>
     </div>
     <%= yield %>
-    <%= render 'shared/footer'%>
+  <div>
+    <%= render 'shared/footer' %>
+  </div>
   </body>
 </html>
