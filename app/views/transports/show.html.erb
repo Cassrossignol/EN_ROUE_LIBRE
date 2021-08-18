@@ -3,3 +3,12 @@
 <h1>LE TRANSPORT DE LA MORT</h1>
 <p>titre: <%= @transport.transport_type %> </p>
 <p>description: <%= @transport.description %></p>
+<p>posté par: <%= User.find(@transport.user_id).email %></p>
+<div>
+  <% unless current_user.id == @transport.user_id %>
+    <%= simple_form_for [@transport, @reservation] do |f| %>
+      <%= f.input :reservation_date, as: :date, html5: true %>
+      <%= f.submit %>
+    <% end %>
+  <% end %>
+</div>

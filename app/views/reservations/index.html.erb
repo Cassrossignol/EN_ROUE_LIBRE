@@ -1,0 +1,10 @@
+
+<div>
+  <ul>
+    <% @reservations.each do |reservation| %>
+      <li> <%= reservation.transport.transport_type %> réservé pour le :
+          <%= reservation.reservation_date %>
+      </li>
+    <% end %>
+  </ul>
+</div>
