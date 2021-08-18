@@ -1,6 +1,15 @@
-<p>hello</p>
+<h1>Your transport offers</h1>
+
+<ul>
 <% @owner_transports.each do |owner_transport| %>
-  <%= owner_transport.transport_type %>
+  <li><%= owner_transport.transport_type %>
+  <%= link_to owner_transport_path(@owner_transports),
+  method: :delete,
+  data: { confirm: "Are you sure?" } do %>
+  <i class="fas fa-trash-alt"></i>
+  <% end %>
+  </li>
 <% end %>
+</ul>
 
 <%= render "/shared/form", transport: @transport %>
