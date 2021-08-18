@@ -1,5 +1,50 @@
-
-<h1>Voici la liste de vos transports !</h1>
-<p><%= @transports.each do |transport| %></p>
-<%= transport.transport_type %>
+<div class="container">
+<h1>Choisis ta ride, laisse moi kiffer ma ride avec mon mec!</h1>
+<h2> Roller, velo, skateboard ... à toi de choisir ! </h2>
+  <div class ="cards">
+    <div class="card-product">
+      <img src="https://images.pexels.com/photos/1149601/pexels-photo-1149601.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+      <div class="card-product-infos">
+        <h3>VELO</h3>
+        <p>Le vélo original du film E.T</p>
+      </div>
+    </div>
+    <div class="card-product">
+      <img src="https://images.pexels.com/photos/3779669/pexels-photo-3779669.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+      <div class="card-product-infos">
+        <h3>ROLLER</h3>
+        <p>Ca roule ma poule.</p>
+      </div>
+    </div>
+    <div class="card-product">
+      <img src="https://images.pexels.com/photos/1642055/pexels-photo-1642055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+      <div class="card-product-infos">
+        <h3>TROTINETTE</h3>
+        <p>Une super trotinette pour arriver en retard au wagon. <br>Seconde batterie intégrée pour éviter les pannes.</p>
+      </div>
+    </div>
+    <div class="card-product">
+      <img src="https://images.pexels.com/photos/165236/pexels-photo-165236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+      <div class="card-product-infos">
+        <h3>SKATEBOARD</h3>
+        <p>UN SKATEBOARD de toute beauté</p>
+      </div>
+    </div>
+    <div class="card-product">
+      <img src="https://images.unsplash.com/photo-1596706696066-99a44cc64e0f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1255&q=80" />
+      <div class="card-product-infos">
+        <h3>ROLLER QUAD</h3>
+        <p>Des patins pour foncer sur les quais !</p>
+      </div>
+    </div>
+    <div class="card-product">
+      <img src="https://images.pexels.com/photos/2130611/pexels-photo-2130611.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+      <div class="card-product-infos">
+        <h3>VELO ELECTRIQUE</h3>
+        <p>un vélo ou un scooter ? Viens le tester !</p>
+      </div>
+    </div>
+  </div>
+<p><% @transports.each do |transport| %></p>
+<% transport.transport_type %>
 <%end %>
