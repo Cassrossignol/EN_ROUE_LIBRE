@@ -3,7 +3,7 @@
 <ul>
 <% @owner_transports.each do |owner_transport| %>
   <li><%= owner_transport.transport_type %>
-  <%= link_to owner_transport_path(@owner_transports),
+  <%= link_to owner_transport_path(owner_transport),
   method: :delete,
   data: { confirm: "Are you sure?" } do %>
   <i class="fas fa-trash-alt"></i>
