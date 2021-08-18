@@ -17,7 +17,6 @@ class Owner::TransportsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -26,7 +25,7 @@ class Owner::TransportsController < ApplicationController
   def destroy
     @owner_transport = Transport.find(params[:id])
     @owner_transport.destroy
-    redirect_to owner_transport_path(@owner_transport)
+    redirect_to owner_transports_path
   end
 
   private
