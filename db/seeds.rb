@@ -14,6 +14,7 @@ puts "#{User.count} users created"
 
 Transport.destroy_all
 
+
 Transport.create!(username: "Romain", transport_type: 'Vélo', description: 'Le vélo original du film E.T', price: "10/jour", picture:'https://images.pexels.com/photos/1149601/pexels-photo-1149601.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', localization:'Paris' , availability:'Disponible', user_id: 1)
 Transport.create!(username: "Romain", transport_type: 'Trotinette', description: 'Une super trotinette pour arriver en retard au wagon', price: "10/jour", picture: 'https://images.pexels.com/photos/1642055/pexels-photo-1642055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', localization:'Bordeaux' , availability: 'Disponible', user_id: 1 )
 Transport.create!(username: "Romain", transport_type: 'Skateboard', description: 'UN SKATEBOARD de toute beauté', price: "10/jour", picture: 'https://images.pexels.com/photos/165236/pexels-photo-165236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', localization:'Paris' , availability: 'Disponible', user_id: 1)
