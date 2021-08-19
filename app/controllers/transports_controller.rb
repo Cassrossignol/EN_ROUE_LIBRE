@@ -4,15 +4,25 @@ class TransportsController < ApplicationController
   def index
     if params[:query].present?
       sql_query = " \
-        transports.transport_type @@ :query \
-        OR transports.description @@ :query \
-        OR transports.localization @@ :query \
+        transports.transport_type ILIKE :query \
+        OR transports.description ILIKE :query \
+        OR transports.localization ILIKE :query \
+        OR transports.username ILIKE :query \
       "
-      @transports = Transport.joins(:director).where(sql_query, query: "%#{params[:query]}%")
+      @transports = Transport.where(sql_query, query: "%#{params[:query]}%")
     else
       @transports = Transport.all
     end
   end
+
+=begin   def index
+    if params[:query].present?
+      @transports = Transport.where("transport_type OR description ILIKE ?", "%#{params[:query]}%")
+    else
+      @transports = Transport.all
+    end
+  end
+=end
 
   def show
     @transport = Transport.find(params[:id])
