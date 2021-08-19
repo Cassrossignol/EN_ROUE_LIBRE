@@ -3,6 +3,13 @@ class TransportsController < ApplicationController
 
   def index
     @transports = Transport.all
+    @markers = @transports.geocoded.map do |transport|
+      {
+        lat: transport.latitude,
+        lng: transport.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { transport: transport })
+      }
+    end
   end
 
   def show
