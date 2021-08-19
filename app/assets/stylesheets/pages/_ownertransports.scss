@@ -1,7 +1,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 200px;
+  height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,6 +9,11 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+
+body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
 h2 {
   color: white;
   font-weight: bold;
