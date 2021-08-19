@@ -1,6 +1,14 @@
 <div class="container">
 <h1>Choisis ta ride, laisse moi kiffer ma ride avec mon mec!</h1>
 <h2> Roller, velo, skateboard ... à toi de choisir ! </h2>
+  <%= form_tag transports_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a ride"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
   <div class ="cards">
     <% @transports.each do |transport| %>
       <div class="card-product">
@@ -11,8 +19,9 @@
         <div class="card-product-infos">
           <h3><%= transport.transport_type %></h3>
           <p><%= transport.description %></p>
-          <p> <%= link_to "voir plus", transport_path(transport) %> </p>
+          <p><%= link_to "voir plus", transport_path(transport) %></p>
         </div>
       </div>
     <% end %>
   </div>
+</div>
