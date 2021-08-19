@@ -15,15 +15,6 @@ class TransportsController < ApplicationController
     end
   end
 
-=begin   def index
-    if params[:query].present?
-      @transports = Transport.where("transport_type OR description ILIKE ?", "%#{params[:query]}%")
-    else
-      @transports = Transport.all
-    end
-  end
-=end
-
   def show
     @transport = Transport.find(params[:id])
     @reservation = Reservation.new
