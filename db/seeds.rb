@@ -14,6 +14,7 @@ puts "#{User.count} users created"
 
 Transport.destroy_all
 
+
 Transport.create!(transport_type: 'Vélo', description: 'Le vélo original du film E.T', picture:'https://images.pexels.com/photos/1149601/pexels-photo-1149601.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', localization:'Paris', user_id: 1)
 Transport.create!(transport_type: 'Trotinette', description: 'Une super trotinette pour arriver en retard au wagon', picture: 'https://images.pexels.com/photos/1642055/pexels-photo-1642055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', localization:'Bordeaux', user_id: 1 )
 Transport.create!(transport_type: 'Skateboard', description: 'UN SKATEBOARD de toute beauté', picture: 'https://images.pexels.com/photos/165236/pexels-photo-165236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', localization:'Paris', user_id: 1)
