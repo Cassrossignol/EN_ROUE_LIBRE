@@ -12,11 +12,11 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.transport_id = params[:transport_id]
     @reservation.user = current_user
-    if @reservation.valid?
-      @reservation.save
+    if @reservation.save
       redirect_to reservations_path(current_user)
     else
-      redirect_to transport_path(params[:transport_id])
+      @transport = @reservation.transport
+      render "transports/show"
     end
   end
 
