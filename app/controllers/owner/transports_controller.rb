@@ -3,6 +3,7 @@ class Owner::TransportsController < ApplicationController
 
   def index
     @owner_transports = Transport.where(user: current_user)
+    raise
     # render :index
   end
 
