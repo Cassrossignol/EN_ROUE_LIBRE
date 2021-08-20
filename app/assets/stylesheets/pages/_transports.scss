@@ -40,10 +40,6 @@ body {
   margin: 0;
 }
 
-.card-reservation {
-  text-align: center
-}
-
 .card-product p {
   font-size: 12px;
   line-height: 1.4;
@@ -78,34 +74,39 @@ body {
 }
 
 .card_description {
-   overflow: hidden;
+  overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
 }
 
 .card_description > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
-  background-position: center;
 }
 
-.card_description h1 {
+.card_description h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: black;
 }
 
 .card_description p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  color:black;
 }
+
 
 .description {
   padding: 16px;
+  width: 400px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-end;
   position: relative;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
