@@ -1,9 +1,10 @@
 // Specific CSS for your home-page
 .banner-home{
   background-image: url("https://cdn.shopify.com/s/files/1/0268/1454/6031/files/buy-boosted-boards-electric-skateboard-in-stock-1_2000x.jpg?v=1586786055");
-  height: 100vh;
+  height: auto;
   position: center;
   background-size: cover;
+  height: 95vh;
 }
 
 body {
@@ -46,7 +47,7 @@ body {
   border-radius: 50px;
   font-weight: lighter;
   margin-top: 5vh;
-  max-width: 11vw;
+  max-width: 13vw;
   position:inherit;
   text-align: center;
   opacity: 0.75
@@ -55,7 +56,7 @@ body {
 #btn-txt {
   a {
     color: white;
-    font-size: 0.5em;
+    font-size: 1vw;
     display: flex;
     text-decoration: none;
     justify-content: center;
