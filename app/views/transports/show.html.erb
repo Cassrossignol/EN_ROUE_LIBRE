@@ -1,18 +1,28 @@
 <%# affichage des informations du moyen de transport choisi (sous forme de carte qui pop)  %>
 <%# Dedans on veut un bouton pour creer une reservation %>
-<h1>Votre transport : <%= @transport.transport_type %></h1>
-<p>description: <%= @transport.description %></p>
-<% if current_user.id == @transport.user_id%>
-  <p> Posté par: Vous </p>
-<% else%>
-  <p> Posté par: <%= "#{ User.find(@transport.user_id).username }" %></p>
-<% end %>
-<%= cl_image_tag("#{@transport.picture}", width: 150, height: 300, crop: :fill) %>
-<div>
-  <% unless current_user.id == @transport.user_id%>
-    <%= simple_form_for [@transport, @reservation] do |f| %>
-      <%= f.input :reservation_date, as: :date, html5: true, required: true %>
-      <%= f.submit %>
-    <% end %>
-  <% end %>
+
+<div class="card_description">
+  <img src="https://api.time.com/wp-content/uploads/2021/02/cities-crisis-debt.jpg" />
+  <div class="description">
+    <div>
+      <h1>Votre transport : <%= @transport.transport_type %></h1>
+      <p>description: <%= @transport.description %></p>
+      <% if current_user.id == @transport.user_id%>
+      <p> Posté par: Vous </p>
+      <% else%>
+      <p> Posté par: <%= "#{ User.find(@transport.user_id).email }" %></p>
+      <% end %>
+      <%= cl_image_tag("#{@transport.picture}", width: 150, height: 300, crop: :fill) %>
+    </div>
+    <div>
+      <% unless current_user.id == @transport.user_id%>
+        <%= simple_form_for [@transport, @reservation] do |f| %>
+          <%= f.input :reservation_date, as: :date, html5: true, required: true %>
+          <%= f.submit %>
+        <% end %>
+      <% end %>
+    </div>
+    <h2 class="card-trip-pricing">£99.99</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
 </div>
