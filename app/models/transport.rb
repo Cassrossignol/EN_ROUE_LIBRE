@@ -7,4 +7,5 @@ class Transport < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+  has_one_attached :picture
 end

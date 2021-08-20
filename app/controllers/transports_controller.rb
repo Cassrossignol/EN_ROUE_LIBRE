@@ -28,4 +28,8 @@ class TransportsController < ApplicationController
     @transport = Transport.find(params[:id])
     @reservation = Reservation.new
   end
+
+  def transport_params
+    params.require(:transport).permit(:transport_type, :description, :picture, :localization, :price, :username)
+  end
 end
