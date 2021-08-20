@@ -12,7 +12,9 @@
       <% else%>
       <p> Posté par: <%= "#{ User.find(@transport.user_id).email }" %></p>
       <% end %>
-      <%= cl_image_tag(@transport.picture.key, width: 150, height: 300, crop: :fill) %>
+      <% if @transport.picture.attached? %>
+        <%= cl_image_tag(@transport.picture.key, width: 150, height: 300, crop: :fill) %>
+      <% end %>
     </div>
     <div>
       <% unless current_user.id == @transport.user_id%>
