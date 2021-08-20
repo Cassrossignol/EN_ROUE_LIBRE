@@ -1,13 +1,13 @@
 <%# affichage des informations du moyen de transport choisi (sous forme de carte qui pop)  %>
 <%# Dedans on veut un bouton pour creer une reservation %>
-<h1>LE TRANSPORT DE LA MORT</h1>
-<p>titre: <%= @transport.transport_type %> </p>
+<h1>Votre transport : <%= @transport.transport_type %></h1>
 <p>description: <%= @transport.description %></p>
 <% if current_user.id == @transport.user_id%>
   <p> Posté par: Vous </p>
 <% else%>
   <p> Posté par: <%= "#{ User.find(@transport.user_id).email }" %></p>
 <% end %>
+<%= cl_image_tag("#{@transport.picture}", width: 150, height: 300, crop: :fill) %>
 <div>
   <% unless current_user.id == @transport.user_id%>
     <%= simple_form_for [@transport, @reservation] do |f| %>
