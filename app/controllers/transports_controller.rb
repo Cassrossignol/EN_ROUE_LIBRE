@@ -15,7 +15,6 @@ class TransportsController < ApplicationController
         transports.transport_type ILIKE :query \
         OR transports.description ILIKE :query \
         OR transports.localization ILIKE :query \
-        OR transports.username ILIKE :query \
       "
       @transports = Transport.where(sql_query, query: "%#{params[:query]}%")
     else
