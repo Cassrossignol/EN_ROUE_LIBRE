@@ -2,6 +2,14 @@ class TransportsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
+    @transports = Transport.all
+    @markers = @transports.geocoded.map do |transport|
+      {
+        lat: transport.latitude,
+        lng: transport.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { transport: transport })
+      }
+    end
     if params[:query].present?
       sql_query = " \
         transports.transport_type ILIKE :query \
@@ -14,15 +22,6 @@ class TransportsController < ApplicationController
       @transports = Transport.all
     end
   end
-
-=begin   def index
-    if params[:query].present?
-      @transports = Transport.where("transport_type OR description ILIKE ?", "%#{params[:query]}%")
-    else
-      @transports = Transport.all
-    end
-  end
-=end
 
   def show
     @transport = Transport.find(params[:id])
