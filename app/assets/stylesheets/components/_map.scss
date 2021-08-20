@@ -1,6 +1,5 @@
 .mapboxgl-popup {
-  max-width: 200px;
-  position: fix;
+  max-width: 150px;
   color: black;
 }
 
@@ -9,7 +8,6 @@
 }
 
 #map {
-  position: sticky;
   margin-bottom: 50px;
   color: black;
 }
