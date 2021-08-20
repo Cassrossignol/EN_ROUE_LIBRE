@@ -7,7 +7,7 @@
 <% else%>
   <p> Posté par: <%= "#{ User.find(@transport.user_id).email }" %></p>
 <% end %>
-<%= cl_image_tag("#{@transport.picture}", width: 150, height: 300, crop: :fill) %>
+<%= cl_image_tag(@transport.picture.key, width: 150, height: 300, crop: :fill) %>
 <div>
   <% unless current_user.id == @transport.user_id%>
     <%= simple_form_for [@transport, @reservation] do |f| %>
